@@ -1,3 +1,25 @@
+let currentDayEl = $('#currentDay');
+let containerEl = $('.container');
+let currentHour = moment().hour();
+let workDayHours = [
+  moment().hour(9).format('hA'),
+  moment().hour(10).format('hA'),
+  moment().hour(11).format('hA'),
+  moment().hour(12).format('hA'),
+  moment().hour(13).format('hA'),
+  moment().hour(14).format('hA'),
+  moment().hour(15).format('hA'),
+  moment().hour(16).format('hA'),
+  moment().hour(17).format('hA')
+];
+let timeBlockHour = $('col-1 hour');
+let task = S('.description');
+
+
+
+
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
