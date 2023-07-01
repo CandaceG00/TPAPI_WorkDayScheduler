@@ -15,6 +15,23 @@ let workDayHours = [
 let timeBlockHour = $('col-1 hour');
 let task = S('.description');
 
+let currentDay = moment().format('dddd, MMMM Do');
+currentDayEl.text(currentDay);
+
+function auditTimeBlock(timeBlockEventSpace) {
+  let currentTimeBlockHour = moment($(timeBlockHour).text().trim(), 'hA').hour();
+  $(timeBlockEventSpace).removeClass('past present future');
+  if (currentTimeBlockHour > currentHour) {
+    $(timeBlockEventSpace).addClass('future');
+}
+else if (currentTimeBlockHour === currentHour) {
+    $(timeBlockEventSpace).addClass('present');
+}
+else {
+    $(timeBlockEventSpace).addClass('past');
+}
+}
+
 
 
 
