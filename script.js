@@ -1,42 +1,3 @@
-let currentDayEl = $('#currentDay');
-let containerEl = $('.container');
-let currentHour = moment().hour();
-let workDayHours = [
-  moment().hour(9).format('hA'),
-  moment().hour(10).format('hA'),
-  moment().hour(11).format('hA'),
-  moment().hour(12).format('hA'),
-  moment().hour(13).format('hA'),
-  moment().hour(14).format('hA'),
-  moment().hour(15).format('hA'),
-  moment().hour(16).format('hA'),
-  moment().hour(17).format('hA')
-];
-let timeBlockHour = $('col-1 hour');
-let task = S('.description');
-
-let currentDay = moment().format('dddd, MMMM Do');
-currentDayEl.text(currentDay);
-
-function auditTimeBlock(timeBlockEventSpace) {
-  let currentTimeBlockHour = moment($(timeBlockHour).text().trim(), 'hA').hour();
-  $(timeBlockEventSpace).removeClass('past present future');
-  if (currentTimeBlockHour > currentHour) {
-    $(timeBlockEventSpace).addClass('future');
-}
-else if (currentTimeBlockHour === currentHour) {
-    $(timeBlockEventSpace).addClass('present');
-}
-else {
-    $(timeBlockEventSpace).addClass('past');
-}
-}
-
-
-
-
-
-
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -48,6 +9,17 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
+$('.btn').on('click', function() {
+  let currentHour = $(this).parent().attr('id')
+  let textValue = $(this).siblings('textarea').val()
+  localStorage.setItem(currentHour, textValue)
+  localStorage.getItem(currentHour)
+  
+}
+)
+
+
+
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
