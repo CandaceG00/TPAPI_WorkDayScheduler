@@ -1,4 +1,8 @@
-# Third-Party API - WorkDayScheduler
+# Third-Party API: WorkDayScheduler
+
+## Description
+
+* As a developer, I wanted to create a web application that would allow users to log their activities on a work-day calendar.
 
 ## Acceptance Criteria
 
