@@ -22,7 +22,7 @@ THEN the saved events persist
 
 * This webpage can be used to generate items on one's schedule within the hours of 9am to 5pm.
 
-* Link: 
+* Link: https://candaceg00.github.io/TPAPI_WorkDayScheduler/
 
 * Screenshots:
     <img src="./Assets/screenshot_1.png"/>
